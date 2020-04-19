@@ -1,14 +1,14 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "icm",
+  "name": "Caemur's industrial mod",
+  "description": "A not very good industrial mod by Caemur",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
+  "url": "https://github.com/gd-1z2/sl_jam",
   "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
+  "authorList": ["Caemur"],
+  "credits": "Me.",
   "logoFile": "",
   "screenshots": [],
   "dependencies": []
