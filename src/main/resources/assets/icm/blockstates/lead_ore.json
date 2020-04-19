@@ -1,0 +1,9 @@
+{
+    "variants" :
+    {
+        "normal" :
+        {
+            "model" : "icm:lead_ore"
+        }    
+    }
+}
