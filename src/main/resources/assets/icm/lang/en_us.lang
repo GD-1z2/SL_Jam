@@ -1,2 +1,8 @@
 item.lead_ingot.name=Lead ingot
 item.uranium_ingot.name=Uranium ingot
+
+tile.lead_ore.name=Lead ore
+tile.uranium_ore.name=Uranium ore
+
+itemGroup.icmMainTab=Caemur's industrial mod
+itemGroup.icmMachinesTab=Caemur's industrial machines

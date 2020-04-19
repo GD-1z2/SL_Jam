@@ -1,8 +1,13 @@
 package fr.caemur.icm;
 
 import fr.caemur.icm.events.RegisteringEvent;
+import fr.caemur.icm.init.ModItems;
 import fr.caemur.icm.proxy.CommonProxy;
+import fr.caemur.icm.tabs.MachinesTab;
+import fr.caemur.icm.tabs.MainTab;
 import fr.caemur.icm.utils.References;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -18,6 +23,9 @@ public class icmMain {
 	
 	@SidedProxy(clientSide = References.clientProxy, serverSide = References.serverProxy)
 	public static CommonProxy proxy;
+	
+	public static final CreativeTabs modTab = new MainTab("icmMainTab");
+	public static final CreativeTabs machinesTab = new MachinesTab("icmMachinesTab");
 	
 	public icmMain()
 	{

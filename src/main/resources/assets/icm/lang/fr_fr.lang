@@ -1,2 +1,8 @@
 item.lead_ingot.name=Lingot de plomb
 item.uranium_ingot.name=Lingot d'uranium
+
+tile.lead_ore.name=Minerai de plomb
+tile.uranium_ore.name=Minerai d'uranium
+
+itemGroup.icmMainTab=Caemur's industrial mod
+itemGroup.icmMachinesTab=Caemur's industrial machines
