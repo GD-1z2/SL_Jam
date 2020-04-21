@@ -1,8 +1,31 @@
 item.lead_ingot.name=Lead ingot
 item.uranium_ingot.name=Uranium ingot
 
+item.lead_helmet.name=Lead helmet
+item.lead_chestplate.name=Lead chestplate
+item.lead_leggings.name=Lead leggings
+item.lead_boots.name=Lead boots
+
+item.lead_sword.name=Lead sword
+item.lead_pickaxe.name=Lead pickaxe
+item.lead_axe.name=Lead axe
+item.lead_shovel.name=Lead shovel
+item.lead_hoe.name=Lead hoe
+
+item.uranium_sword.name=Uranium sword
+item.uranium_pickaxe.name=Uranium pickaxe
+item.uranium_axe.name=Uranium axe
+item.uranium_shovel.name=Uranium shovel
+item.uranium_hoe.name=Uranium hoe
+
+item.iron_stick.name=Iron stick
+
 tile.lead_ore.name=Lead ore
 tile.uranium_ore.name=Uranium ore
+
+tile.solid_xp.name=Solid experience
+
+tile.extractor.name=Extractor
 
 itemGroup.icmMainTab=Caemur's industrial mod
 itemGroup.icmMachinesTab=Caemur's industrial machines

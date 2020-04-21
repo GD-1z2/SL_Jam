@@ -5,6 +5,8 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import fr.caemur.icm.blocks.IcmBlock;
+import fr.caemur.icm.blocks.extractor.Extractor;
+import fr.caemur.icm.blocks.solidxp.SolidXp;
 import fr.caemur.icm.utils.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -23,6 +25,9 @@ public class ModBlocks {
 
 	public static Block lead_ore;
 	public static Block uranium_ore;
+	public static Block solid_xp;
+	
+	public static Block extractor;
 
 	private List<Block> blocks;
 
@@ -32,6 +37,9 @@ public class ModBlocks {
 
 		lead_ore = new IcmBlock("lead_ore", Material.ROCK, 3, 15, 2, "pickaxe");
 		uranium_ore = new IcmBlock("uranium_ore", Material.ROCK, 3, 15, 2, "pickaxe");
+		solid_xp = new SolidXp("solid_xp");
+		
+		extractor = new Extractor("extractor");
 
 		for (Block block : blocks) {
 			ItemBlock ib = new ItemBlock(block);

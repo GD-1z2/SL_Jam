@@ -6,6 +6,7 @@ import fr.caemur.icm.proxy.CommonProxy;
 import fr.caemur.icm.tabs.MachinesTab;
 import fr.caemur.icm.tabs.MainTab;
 import fr.caemur.icm.utils.References;
+import fr.caemur.icm.utils.handlers.TileEntityHandler;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.common.MinecraftForge;
@@ -36,6 +37,7 @@ public class icmMain {
 	public void preInit(FMLPreInitializationEvent event)
 	{
 		proxy.preInit();
+		TileEntityHandler.registerTileEntities();
 	}
 	
 	@Mod.EventHandler

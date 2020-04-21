@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "icm:extractor", "y": 180 },
+        "facing=south": { "model": "icm:extractor" },
+        "facing=west":  { "model": "icm:extractor", "y": 90 },
+        "facing=east":  { "model": "icm:extractor", "y": 270 }
+    }
+}

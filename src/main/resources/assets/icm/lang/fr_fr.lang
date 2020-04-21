@@ -1,8 +1,31 @@
 item.lead_ingot.name=Lingot de plomb
 item.uranium_ingot.name=Lingot d'uranium
 
+item.lead_helmet.name=Casque en plomb
+item.lead_chestplate.name=Plastron en plomb
+item.lead_leggings.name=Jambières en plomb
+item.lead_boots.name=Bottes en plomb
+
+item.lead_sword.name=Epée en plomb
+item.lead_pickaxe.name=Pioche en plomb
+item.lead_axe.name=Hache en plomb
+item.lead_shovel.name=Pelle en plomb
+item.lead_hoe.name=Houe en plomb
+
+item.uranium_sword.name=Epée en uranium
+item.uranium_pickaxe.name=Pioche en uranium
+item.uranium_axe.name=Hache en uranium
+item.uranium_shovel.name=Pelle en uranium
+item.uranium_hoe.name=Houe en uranium
+
+item.iron_stick.name=Baton en fer
+
 tile.lead_ore.name=Minerai de plomb
 tile.uranium_ore.name=Minerai d'uranium
+
+tile.solid_xp.name=Expérience solidifiée
+
+tile.extractor.name=Extracteur
 
 itemGroup.icmMainTab=Caemur's industrial mod
 itemGroup.icmMachinesTab=Caemur's industrial machines

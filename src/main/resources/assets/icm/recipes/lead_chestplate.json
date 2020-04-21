@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "I I",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "icm:lead_ingot"
+    }
+  },
+  "result": {
+    "item": "icm:lead_chestplate"
+  }
+}
