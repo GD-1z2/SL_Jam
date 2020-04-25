@@ -1,6 +1,7 @@
 package fr.caemur.icm;
 
 import fr.caemur.icm.events.RegisteringEvent;
+import fr.caemur.icm.init.ModEvents;
 import fr.caemur.icm.init.ModItems;
 import fr.caemur.icm.proxy.CommonProxy;
 import fr.caemur.icm.tabs.MachinesTab;
@@ -38,6 +39,7 @@ public class icmMain {
 	{
 		proxy.preInit();
 		TileEntityHandler.registerTileEntities();
+		ModEvents.init();
 	}
 	
 	@Mod.EventHandler

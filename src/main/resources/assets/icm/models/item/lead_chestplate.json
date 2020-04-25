@@ -1,6 +1,6 @@
 {
     "parent" : "item/generated",
     "textures" : {
-        "layer0" : "icm:items/iron_stick"
+        "layer0" : "icm:items/lead_chestplate"
     }
 }

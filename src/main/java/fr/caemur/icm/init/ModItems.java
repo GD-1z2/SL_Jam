@@ -5,7 +5,9 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import fr.caemur.icm.armors.IcmArmor;
+import fr.caemur.icm.blocks.solidifier.Solidifier;
 import fr.caemur.icm.items.IcmItem;
+import fr.caemur.icm.items.ItemBlockMetadata;
 import fr.caemur.icm.tools.IcmAxe;
 import fr.caemur.icm.tools.IcmHoe;
 import fr.caemur.icm.tools.IcmPickaxe;
@@ -61,6 +63,8 @@ public class ModItems {
 	
 	public static Item iron_stick;
 	
+//	public static final Item SOLIDIFIER_ITEM = new ItemBlockMetadata(ModBlocks.solidifier, new String[] {"solidifier_zero", "solidifier_one", "solidifier_two", "solidifier_three"}).setRegistryName(ModBlocks.solidifier.getRegistryName());
+	
 	private List<Item> items;
 	
 	public void init()
@@ -70,7 +74,7 @@ public class ModItems {
 		lead_ingot = new IcmItem("lead_ingot");
 		uranium_ingot = new IcmItem("uranium_ingot");
 		
-		lead_armor_mat = EnumHelper.addArmorMaterial("lead_armor_mat", "leadArmor", 100, new int[] {2, 4, 3, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1);
+		lead_armor_mat = EnumHelper.addArmorMaterial("lead_armor_mat", References.MODID + ":lead_armor", 100, new int[] {2, 4, 3, 1}, 10, SoundEvents.ITEM_ARMOR_EQUIP_IRON, 1);
 		
 		lead_helmet = new IcmArmor("lead_helmet", lead_armor_mat, 2, EntityEquipmentSlot.HEAD);
 		lead_chestplate = new IcmArmor("lead_chestplate", lead_armor_mat, 2, EntityEquipmentSlot.CHEST);
@@ -101,13 +105,18 @@ public class ModItems {
 	public void registerModels(ModelRegistryEvent event)
 	{
 		for (Item item : items) {
-			registerModel(item);
+			registerModel(item, 0);
 		}
+//		
+//		for (int i = 0; i < Solidifier.EnumType.values().length; i++) {
+//			registerModel(SOLIDIFIER_ITEM, i);
+//		}
 	}
 	
-	public void registerModel(Item item)
+	public void registerModel(Item item, int meta)
 	{
-		ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(new ResourceLocation(References.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
+		System.out.println("register item model name : " + item.getUnlocalizedName());
+		ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(new ResourceLocation(References.MODID, item.getUnlocalizedName().substring(5)), "inventory"));
 	}
 	
 	public List<Item> getItems() {

@@ -85,7 +85,6 @@ public class Extractor extends Block {
 		default:
 			return EXTRACTOR_AABB_SOUTH;
 		}
-
 	}
 
 	@Override
@@ -131,7 +130,7 @@ public class Extractor extends Block {
 
 	private void setDefaultFacing(World worldIn, BlockPos pos, IBlockState state)
 	{
-		if (!worldIn.isRemote)
+		if ( ! worldIn.isRemote)
 		{
 			IBlockState iblockstate = worldIn.getBlockState(pos.north());
 			IBlockState iblockstate1 = worldIn.getBlockState(pos.south());
@@ -159,16 +158,7 @@ public class Extractor extends Block {
 			worldIn.setBlockState(pos, state.withProperty(FACING, enumfacing), 2);
 		}
 	}
-
-
-	public static void setState(boolean active, World worldIn, BlockPos pos)
-	{
-		IBlockState iblockstate = worldIn.getBlockState(pos);
-
-		worldIn.setBlockState(pos, ModBlocks.extractor.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-		worldIn.setBlockState(pos, ModBlocks.extractor.getDefaultState().withProperty(FACING, iblockstate.getValue(FACING)), 3);
-	}
-
+	
 	@Override
 	public IBlockState getStateForPlacement(World world, BlockPos pos, EnumFacing facing, float hitX, float hitY, float hitZ, int meta, EntityLivingBase placer) 
 	{
@@ -211,79 +201,23 @@ public class Extractor extends Block {
 	}
 
 	@Override
-	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced) {
-
-		List<String> info = Lists.newArrayList();
-		info.add("Permet d'extraire de l'expérience d'un bloc d'expérience solidifée");
-		info.add("Clic droit pour utiliser");
+	public void addInformation(ItemStack stack, World player, List<String> tooltip, ITooltipFlag advanced)
+	{
+		tooltip.add("Permet d'extraire de l'expérience d'un bloc d'expérience solidifée");
+		tooltip.add("Clic droit pour utiliser");
 		super.addInformation(stack, player, tooltip, advanced);
 	}
-
-	//////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////
-	////////////////////
-	//////////////////////////////////////////////////////
-	//////////////////////////////////////////////////////
 
 	@Override
 	public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) 
 	{
 		EnumFacing pFace = placer.getHorizontalFacing();
 		worldIn.setBlockState(pos, state.withProperty(FACING, pFace.getOpposite()));
-
-		//		EnumFacing pFace = placer.getHorizontalFacing();
-		//		
-		//		int meta = getMetaFromState(state);
-		//		IBlockState behindBlock;
-		//
-		//		if (meta == 2) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 1));
-		//		} else if (meta == 5) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ()));
-		//		} else if (meta == 3) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 1));
-		//		} else {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ()));
-		//		}
-		//
-		//		System.out.println(behindBlock.getBlock().getLocalizedName());
-		//		
-		//		if (behindBlock != null) {
-		//
-		//			if (behindBlock.isFullBlock() && behindBlock.isFullCube() && behindBlock != Blocks.AIR.getDefaultState()) {
-		//				worldIn.setBlockState(pos, state.withProperty(FACING, pFace.getOpposite()));
-		//			}
-		//		}
-
 	}
 
 	@Override
 	public void onBlockAdded(World worldIn, BlockPos pos, IBlockState state) 
 	{
 		this.setDefaultFacing(worldIn, pos, state);
-
-		//		int meta = getMetaFromState(state);
-		//		IBlockState behindBlock;
-		//
-		//		if (meta == 2) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() - 1));
-		//		} else if (meta == 5) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX() + 1, pos.getY(), pos.getZ()));
-		//		} else if (meta == 3) {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX(), pos.getY(), pos.getZ() + 1));
-		//		} else {
-		//			behindBlock = worldIn.getBlockState(new BlockPos(pos.getX() - 1, pos.getY(), pos.getZ()));
-		//		}
-		//
-		//		System.out.println(behindBlock.getBlock().getLocalizedName());
-		//		
-		//		if (behindBlock != null) {
-		//
-		//			if (behindBlock.isFullBlock() && behindBlock.isFullCube() && behindBlock != Blocks.AIR.getDefaultState()) {
-		//				this.setDefaultFacing(worldIn, pos, state);
-		//			}
-		//		}
 	}
-
-
 }

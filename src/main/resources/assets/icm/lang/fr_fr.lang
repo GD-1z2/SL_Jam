@@ -26,6 +26,7 @@ tile.uranium_ore.name=Minerai d'uranium
 tile.solid_xp.name=Expérience solidifiée
 
 tile.extractor.name=Extracteur
+tile.solidifier_zero.name=Solidifieur
 
 itemGroup.icmMainTab=Caemur's industrial mod
 itemGroup.icmMachinesTab=Caemur's industrial machines
