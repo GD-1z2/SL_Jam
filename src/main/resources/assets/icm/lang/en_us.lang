@@ -25,8 +25,13 @@ tile.uranium_ore.name=Uranium ore
 
 tile.solid_xp.name=Solid experience
 
+tile.reinforced_obsidian.name=Reinforced obsidian
+
 tile.extractor.name=Extractor
-tile.solidifier_zero=Solidifier
+tile.solidifier.name=Solidifier
+tile.compressor.name=Compressor
 
 itemGroup.icmMainTab=Caemur's industrial mod
 itemGroup.icmMachinesTab=Caemur's industrial machines
+
+container.compressor=Compressor

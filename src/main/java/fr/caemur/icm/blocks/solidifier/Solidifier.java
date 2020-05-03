@@ -30,7 +30,7 @@ public class Solidifier extends Block implements ITileEntityProvider {
 	public static final PropertyEnum<Solidifier.EnumType> VARIANT = PropertyEnum.<Solidifier.EnumType>create("variant", Solidifier.EnumType.class);
 
 	public Solidifier() {
-		super(Material.ROCK);
+		super(Material.IRON);
 		setRegistryName(this.NAME).setUnlocalizedName(this.NAME);
 		setCreativeTab(icmMain.machinesTab);
 		setHardness(3.5f);
@@ -60,7 +60,7 @@ public class Solidifier extends Block implements ITileEntityProvider {
 	{
 		return this.getDefaultState().withProperty(VARIANT, Solidifier.EnumType.byMetadata(meta));
 	}
-
+	
 	@Override
 	public int getMetaFromState(IBlockState state)
 	{
@@ -167,17 +167,15 @@ public class Solidifier extends Block implements ITileEntityProvider {
 		return super.onBlockActivated(world, pos, state, player, hand, facing, hitX, hitY, hitZ);
 	}
 
-	public void setState(int state, World world, BlockPos pos)
-	{
-//		world.setBlockState(pos, this.getDefaultState().withProperty(VARIANT, Solidifier.EnumType.byMetadata(state)));
-	}
-
 	public static enum EnumType implements IStringSerializable
 	{
 		ZERO(0, "solidifier_zero", "solidifier_zero"),
 		ONE(1, "solidifier_one", "solidifier_one"),
 		TWO(2, "solidifier_two", "solidifier_two"),
-		THREE(3, "solidifier_three", "solidifier_three");
+		THREE(3, "solidifier_three", "solidifier_three"),
+		WONE(4, "solidifier_wone", "solidifier_wone"),
+		WTWO(5, "solidifier_wtwo", "solidifier_wtwo"),
+		WTHREE(6, "solidifier_wthree", "solidifier_wthree");
 
 		private static final Solidifier.EnumType[] META_LOOKUP = new Solidifier.EnumType[values().length];
 		private final int meta;
@@ -230,6 +228,15 @@ public class Solidifier extends Block implements ITileEntityProvider {
 			case 3:
 				return EnumType.THREE;
 
+			case 4:
+				return EnumType.WONE;
+
+			case 5:
+				return EnumType.WTWO;
+
+			case 6:
+				return EnumType.WTHREE;
+				
 			default:
 				return EnumType.ZERO;
 			}

@@ -14,7 +14,7 @@ public class MachinesTab extends CreativeTabs {
 
 	@Override
 	public ItemStack getTabIconItem() {
-		return new ItemStack(ModBlocks.uranium_ore);
+		return new ItemStack(ModBlocks.solidifier);
 	}
 //	
 //	@Override

@@ -3,6 +3,9 @@
         "variant=solidifier_zero": { "model": "icm:solidifier_zero" },
         "variant=solidifier_one": { "model": "icm:solidifier_one" },
         "variant=solidifier_two":  { "model": "icm:solidifier_two" },
-        "variant=solidifier_three":  { "model": "icm:solidifier_three" }
+        "variant=solidifier_three":  { "model": "icm:solidifier_three" },
+        "variant=solidifier_wone": { "model": "icm:solidifier_wone" },
+        "variant=solidifier_wtwo":  { "model": "icm:solidifier_wtwo" },
+        "variant=solidifier_wthree":  { "model": "icm:solidifier_wthree" }
     }
 }

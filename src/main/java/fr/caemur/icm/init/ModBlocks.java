@@ -5,6 +5,7 @@ import java.util.List;
 import com.google.common.collect.Lists;
 
 import fr.caemur.icm.blocks.IcmBlock;
+import fr.caemur.icm.blocks.compressor.Compressor;
 import fr.caemur.icm.blocks.extractor.Extractor;
 import fr.caemur.icm.blocks.solidifier.Solidifier;
 import fr.caemur.icm.blocks.solidxp.SolidXp;
@@ -29,8 +30,11 @@ public class ModBlocks {
 	public static Block uranium_ore;
 	public static Block solid_xp;
 
+	public static Block reinforced_obsidian;
+	
 	public static Block extractor;
 	public static Block solidifier;
+	public static Block compressor;
 
 	private List<Block> blocks;
 
@@ -42,23 +46,17 @@ public class ModBlocks {
 		uranium_ore = new IcmBlock("uranium_ore", Material.ROCK, 3, 15, 2, "pickaxe");
 		solid_xp = new SolidXp("solid_xp");
 
+		reinforced_obsidian = new IcmBlock("reinforced_obsidian", Material.ROCK, 100.0f, 6000.0f, 3, "pickaxe");
+		
 		extractor = new Extractor("extractor");
 		solidifier = new Solidifier();
+		compressor = new Compressor();
 
-		for (Block block : blocks) {
-
-			System.out.println("est un solidifier" + (block == solidifier));
-//			if (block != solidifier) {
-				ItemBlock ib = new ItemBlock(block);
-				ib.setRegistryName(block.getRegistryName());
-				GameRegistry.findRegistry(Item.class).register(ib);
-//			} else {
-//				for (int i = 0; i < Solidifier.EnumType.values().length; i++) {
-//					ItemBlock ib = new ItemBlockMetadata(block, new String[] {"solidifier_zero", "solidifier_one", "solidifier_two", "solidifier_three"});
-//					ib.setRegistryName(block.getRegistryName());
-//					GameRegistry.findRegistry(Item.class).register(ib);
-//				}
-//			}
+		for (Block block : blocks)
+		{
+			ItemBlock ib = new ItemBlock(block);
+			ib.setRegistryName(block.getRegistryName());
+			GameRegistry.findRegistry(Item.class).register(ib);
 		}
 	}
 

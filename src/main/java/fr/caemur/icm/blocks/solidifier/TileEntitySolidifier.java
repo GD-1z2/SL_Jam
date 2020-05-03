@@ -8,7 +8,7 @@ import net.minecraft.network.play.server.SPacketUpdateTileEntity;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.ITickable;
 
-public class TileEntitySolidifier extends TileEntity implements ITickable{
+public class TileEntitySolidifier extends TileEntity {
 
 	private int liquid; // 0 nothing, 1 water, 2 lava
 	private int qt;
@@ -65,6 +65,8 @@ public class TileEntitySolidifier extends TileEntity implements ITickable{
 				{
 					this.liquid = 0;
 				}
+				
+				return true;
 			}
 		}
 		
@@ -103,20 +105,11 @@ public class TileEntitySolidifier extends TileEntity implements ITickable{
 		
 		return 0;
 	}
-
-	@Override
-	public void update()
+	
+	public void setData(int liquidI, int qtI)
 	{
-		if (getBlockMetadata() != this.qt)
-		{
-			IBlockState block = this.getWorld().getBlockState(this.pos);
-			if (block.getBlock() instanceof Solidifier)
-			{
-				Solidifier block2 = (Solidifier)block.getBlock();
-				
-				block2.setState(this.qt, this.getWorld(), this.pos);
-			}
-		}
+		this.liquid = liquidI;
+		this.qt = qtI;
 	}
 	
 	@Override

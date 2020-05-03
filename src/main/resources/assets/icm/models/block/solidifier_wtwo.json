@@ -1,0 +1,13 @@
+{
+    "parent" : "block/cube",
+    "textures" :
+    {
+        "down" : "icm:blocks/solidifier_top",
+        "up" : "icm:blocks/solidifier_top",
+        "north" : "icm:blocks/solidifier_wtwo",
+        "south" : "icm:blocks/solidifier_wtwo",
+        "west" : "icm:blocks/solidifier_wtwo",
+        "east" : "icm:blocks/solidifier_wtwo",
+        "particle" : "icm:blocks/solidifier_top"
+    }
+}       

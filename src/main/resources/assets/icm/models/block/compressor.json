@@ -1,0 +1,13 @@
+{
+    "parent" : "block/cube",
+    "textures" :
+    {
+        "down" : "icm:blocks/compressor_top",
+        "up" : "icm:blocks/compressor_top",
+        "north" : "icm:blocks/compressor_side",
+        "south" : "icm:blocks/compressor_side",
+        "west" : "icm:blocks/compressor_side",
+        "east" : "icm:blocks/compressor_side",
+        "particle" : "icm:blocks/compressor_side"
+    }
+}       
