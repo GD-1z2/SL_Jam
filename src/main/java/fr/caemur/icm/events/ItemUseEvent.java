@@ -3,13 +3,19 @@ package fr.caemur.icm.events;
 import fr.caemur.icm.blocks.solidifier.Solidifier;
 import fr.caemur.icm.blocks.solidifier.TileEntitySolidifier;
 import fr.caemur.icm.init.ModBlocks;
+import net.minecraft.block.BlockTNT;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.client.audio.Sound;
+import net.minecraft.client.audio.SoundRegistry;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.util.SoundEvent;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
@@ -79,11 +85,13 @@ public class ItemUseEvent
 								case 1:
 									world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), new ItemStack(Blocks.PACKED_ICE)));
 									setSolidifierMeta(world, pos);
+									world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
 									break;
 
 								case 2:
 									world.spawnEntity(new EntityItem(world, pos.getX(), pos.getY()+1, pos.getZ(), new ItemStack(ModBlocks.reinforced_obsidian)));
 									setSolidifierMeta(world, pos);
+									world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_FIRE_EXTINGUISH, SoundCategory.BLOCKS, 1.0f, 1.0f);
 									break;
 									
 								default:

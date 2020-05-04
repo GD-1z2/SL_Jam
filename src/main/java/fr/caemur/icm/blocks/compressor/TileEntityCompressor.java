@@ -3,6 +3,7 @@ package fr.caemur.icm.blocks.compressor;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.init.Blocks;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.Container;
 import net.minecraft.inventory.ISidedInventory;
 import net.minecraft.inventory.ItemStackHelper;
@@ -13,6 +14,7 @@ import net.minecraft.tileentity.TileEntityLockable;
 import net.minecraft.util.EnumFacing;
 import net.minecraft.util.ITickable;
 import net.minecraft.util.NonNullList;
+import net.minecraft.util.SoundCategory;
 import net.minecraftforge.common.capabilities.Capability;
 
 public class TileEntityCompressor extends TileEntityLockable implements ISidedInventory, ITickable {
@@ -240,7 +242,6 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
 		if (s3.getCount() < minCount) minCount = s3.getCount();
 		if (s4.getCount() < minCount) minCount = s4.getCount();
 		
-//		if (new ItemStack(s1.getItem()) == obsidianRecipe[0] && new ItemStack(s2.getItem()) == obsidianRecipe[1] && new ItemStack(s3.getItem()) == obsidianRecipe[2] && new ItemStack(s4.getItem()) == obsidianRecipe[3])
 		if (s1.getItem() == Item.getItemFromBlock(Blocks.STONE) && s2.getItem() == Item.getItemFromBlock(Blocks.STONE) && s3.getItem() == Item.getItemFromBlock(Blocks.STONE) && s4.getItem() == Item.getItemFromBlock(Blocks.STONE))
 		{
             if (sr.isEmpty())
@@ -250,6 +251,8 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
                 s2.shrink(minCount);
                 s3.shrink(minCount);
                 s4.shrink(minCount);
+                
+				world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
             }
             else if (sr.getItem() == Item.getItemFromBlock(Blocks.OBSIDIAN))
             {
@@ -268,6 +271,8 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
                 s2.shrink(growCount);
                 s3.shrink(growCount);
                 s4.shrink(growCount);
+                
+				world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
             }
 		}
 	}

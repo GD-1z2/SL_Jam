@@ -2,10 +2,12 @@ package fr.caemur.icm;
 
 import java.io.File;
 
+import fr.caemur.icm.events.OverrideRecipes;
 import fr.caemur.icm.events.RegisteringEvent;
 import fr.caemur.icm.init.ModEvents;
 import fr.caemur.icm.init.ModRecipes;
 import fr.caemur.icm.proxy.CommonProxy;
+import fr.caemur.icm.recipes.TestRecipe;
 import fr.caemur.icm.tabs.MachinesTab;
 import fr.caemur.icm.tabs.MainTab;
 import fr.caemur.icm.utils.References;
@@ -14,6 +16,8 @@ import fr.caemur.icm.utils.handlers.GuiHandler;
 import fr.caemur.icm.utils.handlers.TileEntityHandler;
 import fr.caemur.icm.world.OresGen;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.crafting.IRecipe;
+import net.minecraft.util.ResourceLocation;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -22,6 +26,7 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.registries.IForgeRegistryModifiable;
 
 @Mod(modid = References.MODID, name = References.NAME, version = References.VERSION)
 public class icmMain {

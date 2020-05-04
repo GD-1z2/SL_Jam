@@ -32,6 +32,8 @@ public class ModBlocks {
 
 	public static Block reinforced_obsidian;
 	
+	public static Block uranium_block;
+	
 	public static Block extractor;
 	public static Block solidifier;
 	public static Block compressor;
@@ -47,6 +49,8 @@ public class ModBlocks {
 		solid_xp = new SolidXp("solid_xp");
 
 		reinforced_obsidian = new IcmBlock("reinforced_obsidian", Material.ROCK, 100.0f, 6000.0f, 3, "pickaxe");
+		
+		uranium_block = new IcmBlock("uranium_block", Material.IRON, 5.0f, 30.0f, 1, "pickaxe");
 		
 		extractor = new Extractor("extractor");
 		solidifier = new Solidifier();

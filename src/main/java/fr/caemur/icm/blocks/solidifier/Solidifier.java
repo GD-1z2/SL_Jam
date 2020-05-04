@@ -42,6 +42,12 @@ public class Solidifier extends Block implements ITileEntityProvider {
 	}
 
 	@Override
+	public ItemStack getItem(World worldIn, BlockPos pos, IBlockState state) 
+	{
+		return new ItemStack(ModBlocks.solidifier);
+	}
+	
+	@Override
 	public int damageDropped(IBlockState state)
 	{
 		return state.getValue(VARIANT).getMetadata();
