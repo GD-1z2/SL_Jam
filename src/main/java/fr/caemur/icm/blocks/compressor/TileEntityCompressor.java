@@ -164,7 +164,7 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
 	@Override
 	public void clear()
 	{
-        this.itemStacks.clear();
+		this.itemStacks.clear();
 	}
 
 	@Override
@@ -203,7 +203,7 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
 		{
 			return true;
 		}
-		
+
 		return false;
 	}
 
@@ -218,7 +218,7 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
 	{
 		return "icm:compressor";
 	}
-	
+
 	@Override
 	@javax.annotation.Nullable
 	public <T> T getCapability(Capability<T> capability, EnumFacing facing)
@@ -234,46 +234,49 @@ public class TileEntityCompressor extends TileEntityLockable implements ISidedIn
 		ItemStack s3 = itemStacks.get(2);
 		ItemStack s4 = itemStacks.get(3);
 		ItemStack sr = itemStacks.get(4);
-		
+
 		ItemStack[] obsidianRecipe = {new ItemStack(Blocks.STONE), new ItemStack(Blocks.STONE), new ItemStack(Blocks.STONE), new ItemStack(Blocks.STONE)};
-		
+
 		int minCount = s1.getCount();
 		if (s2.getCount() < minCount) minCount = s2.getCount();
 		if (s3.getCount() < minCount) minCount = s3.getCount();
 		if (s4.getCount() < minCount) minCount = s4.getCount();
-		
+
 		if (s1.getItem() == Item.getItemFromBlock(Blocks.STONE) && s2.getItem() == Item.getItemFromBlock(Blocks.STONE) && s3.getItem() == Item.getItemFromBlock(Blocks.STONE) && s4.getItem() == Item.getItemFromBlock(Blocks.STONE))
 		{
-            if (sr.isEmpty())
-            {
-                this.itemStacks.set(4, new ItemStack(Blocks.OBSIDIAN, minCount));
-                s1.shrink(minCount);
-                s2.shrink(minCount);
-                s3.shrink(minCount);
-                s4.shrink(minCount);
-                
+			if (sr.isEmpty())
+			{
+				this.itemStacks.set(4, new ItemStack(Blocks.OBSIDIAN, minCount));
+				s1.shrink(minCount);
+				s2.shrink(minCount);
+				s3.shrink(minCount);
+				s4.shrink(minCount);
+
 				world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            }
-            else if (sr.getItem() == Item.getItemFromBlock(Blocks.OBSIDIAN))
-            {
-            	int growCount;
-            	
-            	if ((sr.getCount() + minCount) > 64)
-            	{
-            		growCount = 64 - sr.getCount();
-            	} else
-            	{
-            		growCount = minCount;
-            	}
-            	
-                sr.grow(growCount);
-                s1.shrink(growCount);
-                s2.shrink(growCount);
-                s3.shrink(growCount);
-                s4.shrink(growCount);
-                
-				world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
-            }
+			}
+			else if (sr.getItem() == Item.getItemFromBlock(Blocks.OBSIDIAN))
+			{
+				int growCount;
+
+				if ((sr.getCount() + minCount) > 64)
+				{
+					growCount = 64 - sr.getCount();
+				} else
+				{
+					growCount = minCount;
+				}
+
+				sr.grow(growCount);
+				s1.shrink(growCount);
+				s2.shrink(growCount);
+				s3.shrink(growCount);
+				s4.shrink(growCount);
+
+				if (growCount != 0)
+				{
+					world.playSound((EntityPlayer)null, pos, SoundEvents.BLOCK_STONE_BREAK, SoundCategory.BLOCKS, 1.0f, 1.0f);
+				}
+			}
 		}
 	}
 }

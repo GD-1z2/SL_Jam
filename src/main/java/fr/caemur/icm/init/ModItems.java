@@ -7,6 +7,7 @@ import com.google.common.collect.Lists;
 import fr.caemur.icm.armors.IcmArmor;
 import fr.caemur.icm.blocks.solidifier.Solidifier;
 import fr.caemur.icm.items.IcmItem;
+import fr.caemur.icm.items.IronSignItem;
 import fr.caemur.icm.items.ItemBlockMetadata;
 import fr.caemur.icm.tools.IcmAxe;
 import fr.caemur.icm.tools.IcmHoe;
@@ -14,6 +15,8 @@ import fr.caemur.icm.tools.IcmPickaxe;
 import fr.caemur.icm.tools.IcmShovel;
 import fr.caemur.icm.tools.IcmSword;
 import fr.caemur.icm.utils.References;
+import net.minecraft.block.BlockSign;
+import net.minecraft.block.BlockWallSign;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
 import net.minecraft.init.SoundEvents;
 import net.minecraft.inventory.EntityEquipmentSlot;
@@ -63,6 +66,8 @@ public class ModItems {
 	
 	public static Item iron_stick;
 	
+	public static Item iron_sign;
+	
 //	public static final Item SOLIDIFIER_ITEM = new ItemBlockMetadata(ModBlocks.solidifier, new String[] {"solidifier_zero", "solidifier_one", "solidifier_two", "solidifier_three"}).setRegistryName(ModBlocks.solidifier.getRegistryName());
 	
 	private List<Item> items;
@@ -97,6 +102,10 @@ public class ModItems {
 		uranium_hoe = new IcmHoe("uranium_hoe", uranium_tool_mat);
 		
 		iron_stick = new IcmItem("iron_stick");
+		
+		iron_sign = new IronSignItem("iron_sign_item");
+		
+		BlockWallSign sign;
 		
 		// 2f5a31 + 336a35
 	}

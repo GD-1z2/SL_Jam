@@ -1,0 +1,8 @@
+{
+    "variants": {
+        "facing=north": { "model": "icm:wall_iron_sign", "y": 180 },
+        "facing=south": { "model": "icm:wall_iron_sign" },
+        "facing=west":  { "model": "icm:wall_iron_sign", "y": 90 },
+        "facing=east":  { "model": "icm:wall_iron_sign", "y": 270 }
+    }
+}

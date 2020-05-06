@@ -1,6 +1,7 @@
 package fr.caemur.icm.utils.handlers;
 
 import fr.caemur.icm.blocks.compressor.TileEntityCompressor;
+import fr.caemur.icm.blocks.signs.TileEntityIronSign;
 import fr.caemur.icm.blocks.solidifier.TileEntitySolidifier;
 import fr.caemur.icm.blocks.solidxp.TileEntitySolidXp;
 import fr.caemur.icm.utils.References;
@@ -14,5 +15,6 @@ public class TileEntityHandler {
 		GameRegistry.registerTileEntity(TileEntitySolidXp.class, new ResourceLocation(References.MODID + ":solid_xp"));
 		GameRegistry.registerTileEntity(TileEntitySolidifier.class, new ResourceLocation(References.MODID + ":solidifier"));
 		GameRegistry.registerTileEntity(TileEntityCompressor.class, new ResourceLocation(References.MODID + ":compressor"));
+//		GameRegistry.registerTileEntity(TileEntityIronSign.class, new ResourceLocation(References.MODID + ":iron_sign"));
 	}
 }

@@ -19,9 +19,13 @@ item.uranium_shovel.name=Uranium shovel
 item.uranium_hoe.name=Uranium hoe
 
 item.iron_stick.name=Iron stick
+item.iron_sign_item.name=Iron sign
+tile.wall_iron_sign.name=Iron sign
+tile.standing_iron_sign.name=Iron sign
 
 tile.lead_ore.name=Lead ore
 tile.uranium_ore.name=Uranium ore
+tile.uranium_block.name=Uranium block
 
 tile.solid_xp.name=Solid experience
 

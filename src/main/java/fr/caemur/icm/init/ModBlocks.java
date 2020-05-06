@@ -7,9 +7,11 @@ import com.google.common.collect.Lists;
 import fr.caemur.icm.blocks.IcmBlock;
 import fr.caemur.icm.blocks.compressor.Compressor;
 import fr.caemur.icm.blocks.extractor.Extractor;
+import fr.caemur.icm.blocks.signs.IronSign;
+import fr.caemur.icm.blocks.signs.StandingIronSign;
+import fr.caemur.icm.blocks.signs.WallIronSign;
 import fr.caemur.icm.blocks.solidifier.Solidifier;
 import fr.caemur.icm.blocks.solidxp.SolidXp;
-import fr.caemur.icm.items.ItemBlockMetadata;
 import fr.caemur.icm.utils.References;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -38,6 +40,13 @@ public class ModBlocks {
 	public static Block solidifier;
 	public static Block compressor;
 
+	public static Block standing_iron_sign;
+	public static Block wall_iron_sign;
+	public static Block left_iron_sign;
+	public static Block right_iron_sign;
+	public static Block red_iron_sign;
+	public static Block yellow_iron_sign;
+	
 	private List<Block> blocks;
 
 	public void init()
@@ -55,7 +64,10 @@ public class ModBlocks {
 		extractor = new Extractor("extractor");
 		solidifier = new Solidifier();
 		compressor = new Compressor();
-
+		
+		standing_iron_sign = new StandingIronSign("standing_iron_sign");
+		wall_iron_sign = new WallIronSign("wall_iron_sign");
+		
 		for (Block block : blocks)
 		{
 			ItemBlock ib = new ItemBlock(block);

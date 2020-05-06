@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "III",
+    "III",
+    "III"
+  ],
+  "key": {
+    "I": {
+      "item": "icm:uranium_ingot"
+    }
+  },
+  "result": {
+    "item": "icm:uranium_block"
+  }
+}
